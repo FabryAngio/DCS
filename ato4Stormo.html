@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('A.jpg') no-repeat center center fixed;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px #000;
+        }
+        form {
+            background-color: #003366;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: 2px solid #00509e;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .form-row {
+            margin-bottom: 15px;
+        }
+        .form-row label {
+            margin-bottom: 5px;
+        }
+        input[type="submit"] {
+            background-color: #0074D9;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #00509e;
+        }
+    </style>
+</head>
+<body>
+   
+    <form id="discordForm">
+        <h2>Mission Form</h2>
+
+       <!-- Date Time Field -->
+       <label for="datetime">Date and Time:</label>
+       <input type="datetime-local" id="datetime" name="datetime" required>
+
+        <!-- Dep/Arr Field -->
+        <label for="depArr">Dep/Arr:</label>
+        <select id="depArr" name="depArr" required>
+		            <!-- SINAI Options -->
+            <optgroup label="SINAI MAP">
+            <option value="SINAI MAP - NEVATIM AFB">NEVATIM AFB</option>
+            <option value="SINAI MAP - RAMON AFB">RAMON AFB</option>
+            <option value="SINAI MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+            <option value="SINAI MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+            <option value="SINAI MAP - INSHAS AFB">INSHAS AFB</option>
+            <option value="SINAI MAP - MELEZ AFB">MELEZ AFB</option>
+            </optgroup>
+            <!-- SYRIA Options -->
+            <optgroup label="SYRIA MAP">
+			    <option value="SYRIA MAP - AKROTIRI AFB">AKROTIRI AFB</option>
+                <option value="SYRIA MAP - INCIRLIK AFB">INCIRLIK AFB</option>
+                <option value="SYRIA MAP - RAMAT AFB">RAMAT AFB</option>
+				<option value="SYRIA MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="SYRIA MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="SYRIA MAP - AL-ASSAD">AL-ASSAD</option>
+                <option value="SYRIA MAP - H3">H3</option>
+            </optgroup>
+			            <!-- GULF Options -->
+            <optgroup label="PERSIAN GULF MAP">
+			    <option value="PERSIAN GULF MAP - DHAFRA AFB">DHAFRA AFB</option>
+                <option value="PERSIAN GULF MAP - MINHAD AFB">MINHAD AFB</option>
+				<option value="PERSIAN GULF MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="PERSIAN GULF MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="PERSIAN GULF MAP - SHIRAZ intl">SHIRAZ intl</option>
+                <option value="PERSIAN GULF MAP - BANDAR ABBAS intl">BANDAR ABBAS intl</option>
+            </optgroup>
+						            <!-- CAUCASUS Options -->
+            <optgroup label="CAUCASUS MAP">
+			    <option value="CAUCASUS MAP - SENAKI">SENAKI</option>
+                <option value="CAUCASUS MAP - KUTAISI">KUTAISI</option>
+				<option value="CAUCASUS MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="CAUCASUS MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+		        <option value="CAUCASUS MAP - KRASNODAR CENTER">KRASNODAR CENTER</option>
+                <option value="CAUCASUS MAP - MOZDOK">MOZDOK</option>
+            </optgroup>
+						            <!-- KOLA Options -->
+            <optgroup label="KOLA MAP">
+                <option value="KOLA MAP - BODO">BODO</option>
+                <option value="KOLA MAP - ROVANIEMI">ROVANIEMI</option>
+				<option value="KOLA MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="KOLA MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="KOLA MAP - MONCHEGORSK">MONCHEGORSK</option>
+                <option value="KOLA MAP - SEVEROMORSK-3">SEVEROMORSK-3</option>
+            </optgroup>
+									            <!-- NEVADA Options -->
+            <optgroup label="NEVADA MAP">
+                <option value="NEVADA MAP - NELLIS AFB">NELLIS AFB</option>
+                <option value="NEVADA MAP - TONOPAH TEST RANGE">TONOPAH TEST RANGE</option>
+				<option value="NEVADA MAP - CREECH">CREECH</option>
+            </optgroup>
+									            <!-- IRAQ Options -->
+            <optgroup label="IRAQ MAP">
+                <option value="IRAQ MAP - XXX">XXX</option>
+                <option value="IRAQ MAP - XXX">XXX</option>
+				<option value="IRAQ MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="IRAQ MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="IRAQ MAP - AL-ASAD">AL-ASAD</option>
+                <option value="IRAQ MAP - AL-SALAM">AL-SALAM</option>
+            </optgroup>
+												            <!-- MARIANAS Options -->
+            <optgroup label="MARIANAS MAP">
+                <option value="MARIANAS MAP - ANDERSEN AFB">ANDERSEN AFB</option>
+                <option value="MARIANAS MAP - SAIPAN">SAIPAN</option>
+				<option value="MARIANAS MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="MARIANAS MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+            </optgroup>
+												            <!-- AFGANISTAN Options -->
+            <optgroup label="AFGANISTAN MAP">
+                <option value="AFGANISTAN MAP - KANDAHAR">KANDAHAR</option>
+                <option value="AFGANISTAN MAP - CAMP BASTION">CAMP BASTION</option>
+				<option value="AFGANISTAN MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="AFGANISTAN MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="AFGANISTAN MAP - HERAT">HERAT</option>
+                <option value="AFGANISTAN MAP - KABUL">KABUL</option>
+            </optgroup>
+			<optgroup label="SOUTH ATLANTIC MAP">
+                <option value="SOUTH ATLANTIC  MAP - MOUNT PLEASANT">MOUNT PLEASANT</option>
+                <option value="SOUTH ATLANTIC  MAP - RIO GRANDE">RIO GRANDE</option>
+				<option value="SOUTH ATLANTIC  MAP - CV73 WASHINGTON">CV73 WASHINGTON</option>
+				<option value="SOUTH ATLANTIC  MAP - LHA1 TARAWA">LHA1 TARAWA</option>
+				<option value="SOUTH ATLANTIC  MAP - PUNTA ARENAS">PUNTA ARENAS</option>
+                <option value="SOUTH ATLANTIC  MAP - RIO GALLEGOS">RIO GALLEGOS</option>
+            </optgroup>
+        </select>
+
+        <!-- Aircraft Field -->
+        <label for="aircraft">Aircraft:</label>
+        <select id="aircraft" name="aircraft" required>
+		<!-- JET Options -->
+		<optgroup label="JET">
+			<option value="A-4E-C">A4E-C</option>
+			<option value="A-7E">A-7E</option>
+            <option value="A-10C">A-10C</option>
+			<option value="AJS-37">AJ-S37</option>
+			<option value="AV-8B">AV-8B</option>
+			<option value="E/A-6B">E/A-6B</option>
+			<option value="E/A-18E/F">E/A-18G</option>
+			<option value="EFA">EFA</option>
+			<option value="F-1CE/EE/M">F-1CE/EE/M</option>
+			<option value="F-4E">F-4E</option>
+			<option value="F-5E">F-5E</option>
+			<option value="F-14A/B">F-14A/B</option>
+			<option value="F-15C">F-15C</option>
+            <option value="F-15E">F-15E</option>
+            <option value="F-16C/D">F-16C/D</option>
+            <option value="F/A-18C/D">F/A-18C/D</option>
+			<option value="F/A-18E/F">F/A-18E/F</option>
+			<option value="F-22A">F-22A</option>
+			<option value="F-35A/B/C">F-35A/B/C</option>
+            <option value="F-86F">F-86F</option>
+			<option value="F-104G">F-104G</option>
+			<option value="G-91R">G-91R</option>
+            <option value="M-2000C">M-2000C</option>
+			<option value="MIG-21">MIG-21</option>
+			<option value="MIG-25">MIG-25</option>
+            <option value="MIG-29A/S/G">MIG-29A/S/G</option>
+			<option value="PA-200 TORNADO">PA-200 TORNADO</option>
+			<option value="RafaleB/C/M">RafaleB/C/M</option>
+			<option value="SU-25T">SU-25T</option>
+		    <option value="SU-27">SU-27</option>
+			<option value="SU-30SM/MKA">SU-30SM/MKA</option>			
+			<option value="SU-33">SU-33</option>
+			<option value="SU-35">SU-35</option>
+			<option value="SU-57">SU-57</option>
+			<option value="JAS-39C">JAS-39C</option>
+			<option value="JF-17">JF-17</option>
+			<option value="J-11A">J-11A</option>
+
+		<!-- TRAINER Options -->
+		<optgroup label="TRAINER">
+			<option value="C-101CC/EB">C-101CC/EB</option>
+			<option value="T-45">T-45</option>
+			<option value="MB-339A">MB-339A</option>
+			<option value="F1BE">F1BE</option>
+			<option value="L-39C">L-39C/ZA</option>
+			<option value="T-38A/C">T-38A/C</option>
+			<option value="PC-9A">PC-9A</option>
+         <!-- HELO Options -->
+        <optgroup label="HELO">
+			<option value="AH-64D">AH-64D</option>
+			<option value="AH-1G">AH-1G</option>
+            <option value="CH-47F">CH-47F</option>
+			<option value="KA-50">KA-50</option>
+            <option value="UH-1h">UH-1H</option>
+			<option value="UH-60">UH-60</option>
+			<option value="OH-6">OH-6</option>
+			<option value="OH-58">OH-58</option>
+			<option value="MI-24P">MI-24P</option>
+			<option value="MI-8MTV2">MI-8MTV2</option>
+			<option value="SA-342">SA-342</option>
+		<!-- PROP Options -->
+		<optgroup label="PROP">
+			<option value="Bf-109k">Bf-109k</option>
+			<option value="P-47D">P-47D</option>
+			<option value="P-51D">P-51D</option>
+			<option value="C-130J">C-130J</option>
+			<option value="FW-190A8/D9">FW-190A8/D9</option>
+			<option value="Spitfire">Spitfire</option>
+			<option value="YAK-52">YAK-52</option>
+        </select>
+
+
+        <!-- Mission Type Field -->
+        <label for="type">Mission:</label>
+        <select id="type" name="type" required>
+            <!-- IQT Options -->
+            <optgroup label="IQT - Initial Qual Training">
+			    <option value="IQT0-touchngo">IQT0-touchngo</option>
+                <option value="IQT1-nav vmc">IQT1-nav vmc</option>
+                <option value="IQT2-formation day">IQT2-formation day</option>
+                <option value="IQT3-nav low alt">IQT3-nav low alt</option>
+                <option value="IQT4-nav night">IQT4-nav night</option>
+                <option value="IQT5-formation night">IQT5-formation night</option>
+                <option value="IQT6-ifr">IQT6-ifr</option>
+                <option value="IQT7-ifr xcountry">IQT7-ifr xcountry</option>
+                <option value="IQT8-AAR day">IQT8-AAR day</option>
+                <option value="IQT9-AAR night">IQT9-AAR night</option>
+            </optgroup>
+			<!-- WP Options -->
+            <optgroup label="WS - Weapons School">
+			    <option value="WS1-a/a radar tpod">WS1-a/a radar tpod</option>
+                <option value="WS2-a/a gun/aim9">WS2-a/a gun/aim9</option>
+                <option value="WS3-a/a bvr/aim120">WS3-a/a bvr/aim120</option>
+                <option value="WS4-a/g radar tpod">WS4-a/g radar tpod</option>
+                <option value="WS5-a/g gun/rockets">WS5-a/g gun/rockets</option>
+                <option value="WS6-a/g LD bomb">WS6-a/g LD bomb</option>
+                <option value="WS7-a/g LGB">WS7-a/g LGB</option>
+                <option value="WS8-a/g JDAM/JSAW">WS8-a/g JDAM/JSAW</option>
+                <option value="WS9-a/g HD/CBU bomb">WS9-a/g HD/CBU bomb</option>
+                <option value="WS10-a/g agm65">WS10-a/g agm65</option>
+                <option value="WS11-a/g agm88 harm pod">WS11-a/g agm88 harm pod</option>
+				<option value="WS12-a/g agm84 harpoon">WS12-a/g agm84 harpoon</option>
+				<option value="WS HELO1-a/g gun/rockets">WS HELO1-a/g gun/rockets</option>
+				<option value="WS HELO2-a/g radar tpod">WS HELO2-a/g radar tpod</option>
+				<option value="WS HELO3-a/g AGM laser/radar">WS HELO3-a/g AGM laser/radar</option>				
+            </optgroup>
+            <!-- MQT Options -->
+            <optgroup label="MQT - Mission Qual Training">
+                <option value="MQT1-acm">MQT1-acm</option>
+                <option value="MQT2-a/a bvr tactics">MQT2-a/a bvr tactics</option>
+                <option value="MQT3-a/g tactics">MQT3-a/g tactics</option>
+				<option value="MQT4-a/a scramble">MQT4-a/a scramble</option>
+				<option value="MQT5-SEAD">MQT5-SEAD</option>
+				<option value="MQT6-CAS">MQT6-CAS</option>
+				<option value="MQT7-OCA">MQT7-OCA</option>
+				<option value="MQT8-TASMO">MQT8-TASMO</option>
+				<option value="MQT9-CAP">MQT9-CAP</option>
+				<option value="MQT10-MULTIROLE">MQT10-MULTIROLE</option>
+				<option value="MQT HELO1-CSAR">MQT HELO1-CSAR</option>
+				<option value="MQT HELO2-CAS">MQT HELO2-CAS</option>
+				
+            </optgroup>
+            <!-- CQ Options -->
+            <optgroup label="CQ - Carrier Qual">
+                <option value="CQ1-navy circuit">CQ1-navy circuit</option>
+                <option value="CQ2-cv deploy">CQ2-cv deploy</option>
+                <option value="CQ3a-case1">CQ3a-case1</option>
+                <option value="CQ3b-case1 WX">CQ3b-case1 WX</option>
+                <option value="CQ4-case2">CQ4-case2</option>
+                <option value="CQ5-case3">CQ5-case3</option>
+                <option value="CQ6-case3 imc">CQ6-case3 imc</option>
+                <option value="CQ7-cq emg1">CQ7-cq emg1</option>
+                <option value="CQ8-scramble vid">CQ8-scramble vid</option>
+                <option value="CQ9-harpoon">CQ9-harpoon</option>
+                <option value="CQR-carrier qualification recency">CQR-carrier recency</option>
+            </optgroup>
+			 <!-- HELO Options -->
+            <optgroup label="HELO - Helicopters">
+                <option value="HELO1-airport ops / handling">HELO1-airport ops / handling</option>
+				<option value="HELO2-autorotazione">HELO2-autorotazione</option>
+				<option value="HELO3-takeoff">HELO3-takeoff</option>
+				<option value="HELO4-formation">HELO4-formation</option>
+				<option value="HELO5-nav vmc">HELO5-nav vmc</option>
+				<option value="HELO6-out-field ops">HELO6-out-field ops</option>
+				<option value="HELO7-Night ops">HELO7-Night ops</option>
+				<option value="HELO8-sling load">HELO8-sling load</option>
+				<option value="HELO9-MCC">HELO9-MCC</option>
+				<option value="HELO10-navy ops">HELO10-navy ops</option>
+            </optgroup>
+			            <!-- free -->
+            <optgroup label="MISSION">
+                <option value="MISSION">MISSION</option>
+            </optgroup>
+        </select>
+
+        <!-- Flight Plan Field -->
+        <label for="flightplan">Flight Plan:</label>
+        <select id="flightplan" name="flightplan" required>
+            <option value="Not required">Not required</option>
+			<option value="Datacard">Datacard</option>
+            <!-- Nev Options -->
+            <optgroup label="Nev">
+                <option value="NEV1 patrol border sud">NEV1 patrol border sud</option>
+                <option value="NEV2 low sinai saudi">NEV2 low sinai saudi</option>
+                <option value="NEV3 low jordan1">NEV3 low jordan1</option>
+                <option value="NEV4 patrol nord">NEV4 patrol nord</option>
+                <option value="NEV5 patrol border West">NEV5 patrol border West</option>
+            </optgroup>
+            <!-- Ram Options -->
+            <optgroup label="Ram">
+                <option value="Ram1">Ram1</option>
+                <option value="Ram2">Ram2</option>
+                <option value="Ram3">Ram3</option>
+                <option value="Ram4">Ram4</option>
+                <option value="Ram5">Ram5</option>
+            </optgroup>
+            <!-- Wsh Options -->
+            <optgroup label="Wsh">
+                <option value="WSH1 N israel CAP">WSH1 N israel CAP</option>
+                <option value="WSH2 gaza/rmn/nvt">WSH2 gaza/rmn/nvt</option>
+                <option value="WSH3 sea N patrol">WSH3 sea N patrol</option>
+                <option value="WSH4 patrol W">WSH4 patrol W</option>
+                <option value="WSH5">WSH5</option>
+            </optgroup>
+            <!-- Ins Options -->
+            <optgroup label="Ins">
+                <option value="INS1 suez cap">INS1 suez cap</option>
+                <option value="INS2 giza suez">INS2 giza suez</option>
+                <option value="INS3 AA range">INS3 AA range</option>
+                <option value="INS4 red sea cap">INS4 red sea cap</option>
+                <option value="INS5 north coast cap">INS5 north coast cap</option>
+            </optgroup>
+            <!-- Mel Options -->
+            <optgroup label="Mel">
+                <option value="MEL1 patrol border nord">MEL1 patrol border nord</option>
+                <option value="MEL2 patrol sinai">MEL2 patrol sinai</option>
+                <option value="MEL3 suez SW">MEL3 suez SW</option>
+                <option value="MEL4 patrol border E">MEL4 patrol border E</option>
+                <option value="MEL5 patrol suez">MEL5 patrol suez</option>
+            </optgroup>
+			
+			            <!-- KUTAISI CAUCASO Options -->
+            <optgroup label="KUT">
+                <option value="KUT1 cap south west">KUT1 cap south west</option>
+                <option value="KUT2 cap south est">KUT2 cap south est</option>
+                <option value="KUT3 air refuel">KUT3 air refuel</option>
+                <option value="KUT4 bbq">KUT4 bbq</option>
+                <option value="KUT5 cap north west">KUT5 cap north west</option>
+			    <option value="KUT6 zona alpha1/alpha2">KUT6 zona alpha1/alpha2</option>
+                <option value="KUT7 cap north est">KUT7 cap north est</option>
+                <option value="KUT8 poligono a/g">KUT8 poligono a/g</option>
+                <option value="KUT9 zona bravo1/2">KUT9 zona bravo1/2</option>
+                <option value="KUT10 zona anti ship">KUT10 zona anti ship</option>
+				<option value="KUT11 touch and go vaziani">KUT11 touch and go vaziani</option>
+            </optgroup>
+        </select>
+
+        <!-- Meteo Field -->
+        <label for="meteo">Meteo:</label>
+        <select id="meteo" name="meteo" required>
+            <option value="day vmc - 1300L 230/02 9999 SCT180 35/14 Q1010 A29.85">Day VMC</option>
+            <option value="sunset/night - 1830L 200/02 9999 SCT82 FEW210 28/16 Q1005 A29.68">Sunset/Night</option>
+            <option value="day imc - 1300L 230/05 3500 -RA OVC60 OVC190 SCT340 25/23 Q1001 A29.56">Day IMC</option>
+        </select>
+		
+		        <!-- SERVER Field -->
+        <label for="server">server:</label>
+        <select id="server" name="server" required>
+           <!-- <option value="UNSAFE FLIGHT server1">UNSAFE FLIGHT server</option>
+            <option value="4 STORMO server">4 STORMO server</option>
+			<option value="da confermare">da confermare</option> -->
+			<option value="4 STORMO server">4 STORMO server</option>
+        </select><br><br>
+
+        <!-- Note Field -->
+        <label for="note">Note:</label>
+        <textarea id="note" name="note" rows="4"></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+	
+	document.getElementById('depArr').addEventListener('change', function() {
+    const selectedDepArr = this.value;
+    const flightPlanSelect = document.getElementById('flightplan');
+
+    // Mappa flight plan alle mappe
+    const flightPlansByMap = {
+        'SINAI MAP': ['NEV1 patrol border sud', 'NEV2 low sinai saudi', 'NEV3 low jordan1', 'NEV4 patrol nord', 'NEV5 patrol border West', 'MEL1 patrol border nord', 'MEL2 patrol sinai', 'MEL3 suez SW', 'MEL4 patrol border E', 'MEL5 patrol suez', 'INS1 suez cap', 'INS2 giza suez', 'INS3 AA range', 'INS4 red sea cap', 'INS5 north coast cap', 'WSH1 N israel CAP', 'WSH2 gaza/rmn/nvt', 'WSH3 sea N patrol', 'WSH4 patrol W', 'WSH5', 'Datacard'],
+        'SYRIA MAP': ['Datacard'],
+		'PERSIAN GULF MAP': ['Datacard'],
+		'KOLA MAP': ['Datacard'],
+		'CAUCASUS MAP': ['KUT1 cap south west', 'KUT2 cap south est', 'KUT3 air refuel', 'KUT4 bbq', 'KUT5 cap north west', 'KUT6 zona alpha1/alpha2', 'KUT7 cap north est', 'KUT8 poligono a/g', 'KUT9 zona bravo1/2', 'KUT10 zona anti ship', 'KUT11 touch and go vaziani', 'Datacard'],
+		'IRAQ MAP': ['Datacard'],
+		'NEVADA MAP': ['Datacard'],
+		'MARIANAS MAP': ['Datacard'],	
+		'AFGANISTAN MAP': ['Datacard'],			
+		'SOUTH ATLANTIC MAP': ['Datacard'],	
+        // Aggiungi altre mappe qui
+    };
+
+    // Determina la mappa selezionata
+    const mapKey = Object.keys(flightPlansByMap).find(map => selectedDepArr.includes(map));
+    const relevantFlightPlans = flightPlansByMap[mapKey] || [];
+
+    // Aggiorna il menu a tendina dei flight plan
+    flightPlanSelect.innerHTML = '<option value="Not required">Not required</option>'; // Reset
+    relevantFlightPlans.forEach(plan => {
+        const option = document.createElement('option');
+        option.value = plan;
+        option.textContent = plan;
+        flightPlanSelect.appendChild(option);
+    });
+});	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+        document.getElementById('discordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const datetime = document.getElementById('datetime').value;
+            const depArr = document.getElementById('depArr').value;
+            const aircraft = document.getElementById('aircraft').value;
+            const type = document.getElementById('type').value; // Original selected option value
+            const flightplan = document.getElementById('flightplan').value;
+            const meteo = document.getElementById('meteo').value;
+			const server = document.getElementById('server').value;
+            const note = document.getElementById('note').value;
+
+            // Mapping mission types to their full column details in a vertical format
+            const additionalTexts = {
+			    "IQT0-touchngo": "\n-Preflight/startup\n-Taxi/takeoff\n-uscita ATZ\n-Handling in volo\n-rientro ATZ\n-touch and go / landing\n-Taxi/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+                "IQT1-nav vmc": "\n-Preflight/startup\n-Taxi/takeoff\n-Nav VFR\n-Nav wyp\n-Nav TACAN\n-RTB straight in\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\nVFR rule,cruise altitude, ATC airspace, TCN, fuel check, alfa check, bingo fuel\n",
+                "IQT2-formation day": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin\n-Nav VFR/WYP\n-Formation and change formation\n-RTB overhead\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\nvisual/TCN rejoin, formation type, reference, tactical turn, overehead\n",
+                "IQT3-nav low alt": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin to ops area\n-Low alt in TRAIL\n-Rejoin\n-RTB overhead\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\nRAT, low altitude <500ft AGL, speed, scan, recovery climb\n",
+                "IQT4-nav night": "\n-Preflight/startup\n-Taxi/takeoff\n-Nav nightVFR\n-Nav wyp\n-Nav TACAN\n-RTB straight in\n-Taxi/shutdown\n\n**Loadout:** 2aim9+NVG\n\nvisual/TCN rejoin, NVG, FLIR, night VFR rules\n",
+                "IQT5-formation night": "\n-Preflight/startup\n-Taxi/takeoff\n-Formation/cambi\n-RTB straight in\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\naircraft lights, a/a radar help, link16, night formation lights/reference, overehead\n",
+                "IQT6-ifr": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin to ops area\n-IMC flight\n-QDM QDR\n-TCN approach\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\nHUD, ADI, HSI, course sel, TCN randevouz\n",
+                "IQT7-ifr xcountry": "\n-Preflight/startup\n-Taxi/takeoff\n-SID/STAR and IFR Nav\n-RTB tcn/ils approach\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\nRadarAssistedDeparture RAT, IFR rule, IFR charts\n",
+                "IQT8-AAR day": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin to AAR zone\n-Rejoin tanker\n-AAR practice\n-AAR exit\n-RTB overhead\n-Taxi/shutdown\n\n**Loadout:** 2aim9\n\nARIP,ATC radar vector, observation/reform area, plug in exercise 200-500lbs\n",
+                "IQT9-AAR night": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin to AAR zone\n-Rejoin tanker\n-AAR practice\n-AAR exit\n-Taxi/shutdown\n\n**Loadout:** 2aim9+NVG\n\nIQT8 required, night ops, lights, NVG use\n",
+                
+				"WS1-a/a radar tpod": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to ops area\n-RWS/TWS mode\n-IFF system\n-TPOD and VID\n-traffic interception\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD+center tank\n\nEOR, a/a radar mode RWS TWS, TPOD a/a use, IFF, simulated intercept procedure with com\n",
+                "WS2-a/a gun/aim9": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to A/A range\n-Radar ID\n-Aim9 deploy\n-Gun practice\n-Butterfly set\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD\n\nEOR, tactical formation, aim9 performance and deploy, gun a/a, BDA battle damage asset\n",
+                "WS3-a/a bvr/aim120": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to A/A range\n-Radar ID\n-Aim120 deploy\n-Butterfly set\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD\n\nEOR, tactical formation, aim120 performance and deploy, gun a/a, BDA battle damage asset\n",
+                "WS4-a/g radar tpod": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and TPOD track\n-Tpod setting/ LST\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+TPOD\n\nEOR,TPOD a/g, LST, HMD\n",
+                "WS5-a/g gun/rockets": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and dry pass\n-Strafing circuit practice\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2rockets pod+TPOD\n\nEOR, a/g range familiarization, strafing circuit, delay 30sec to engage, VID and dry passage, gun a/g use, rockets use BDA battle damage asset\n",
+                "WS6-a/g LD bomb": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and dry pass\n-Drop practice CCIP/CCRP\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4mk82LD+TPOD\n\nEOR, a/g range familiarization, bombing circuit, delay 30sec to engage, VID and dry passage, CCIP/CCRP, minimum release altitude, BDA battle damage asset\n",
+                "WS7-a/g LGB": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and Tpod track\n-Drop practice LASER/LST\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4LGB12+TPOD\n\nEOR, a/g range familiarization, bombing circuit, delay 30sec to engage, VID and dry passage, AUTO/CCIP/CCRP, minimum release altitude, BDA battle damage asset\n",
+                "WS8-JDAM/JSAW": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt\n-Tpod track or by DTC\n-Drop practice\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4GBU82+TPOD\n\nEOR, a/g range familiarization, bombing circuit, delay 30sec to engage, VID and dry passage, AUTO/CCRP, minimum release altitude, BDA battle damage asset\n",
+                "WS9-a/g HD/CBU bomb": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and Tpod track\n-IP run in low alt to tgt\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4mk82HD+TPOD\n\nEOR, a/g range familiarization, IP run, delay 30sec to engage, VID and dry passage, CCIP/CCRP, release altitude and speed, BDA battle damage asset\n",
+                "WS10-a/g agm65": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and Tpod track\n-IP run to tgt\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4AGM65+TPOD\n\nEOR, a/g range familiarization, IP run, agm65 type, tpod transfer, direct agm track, BDA battle damage asset\n",
+                "WS11-a/g harm pod": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-Tgt search and track/precision\n-TGT engage\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2AGM88+TPOD+harm pod\n\nEOR, AGM88 performance and deploy mode, harm pod use, tracking and precision, BDA battle damage asset\n",
+                "WS12-harpoon": "\n-Preflight/startup\n-Taxi/catapult\n-Case1 departure\n-Nav to ops area\n-A/G sea radar\n-Harpoon setting\n-Tgt engage\n-RTB case1\n-Trap\n-Taxi/shutdown\n\n**Loadout:** 2aim9+2AGM84center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each, radar a/g sea, agm84 performance and deploy mode, carrier deck taxi, AAR recovery tanker available\n",
+
+				"MQT1-acm": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to ops area\n-G-warm up\n-ACM 1-2-3\n-Butterfly set\n-Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD\n\nACM air combat manouvers lead lag offensive defensive, butterfly set\n",
+                "MQT2-a/a bvr tactics": "\n-Preflight/startup\n-Taxi/eor/takeoff\n-Nav to A/A range\n-Tactical engagement\n-Aim120 deploy\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+2aim120+TPOD\n\nEOR,WEZ, MAR, MOR, tactics: SKATE, SHORT SKATE, BANZAI, GRINDER, CRANK, BDA battle damage asset\n",
+                "MQT3-a/g tactics": "\n-Preflight/startup\n-A/G WPN setting\n-Taxi/eor/takeoff\n-Nav to range\n-VID tgt and Tpod track\n-IP run to tgt\n-Check out, Rejoin/BDA\n-RTB\n\n**Loadout:** 2aim9+4mk82HD+TPOD\n\nEOR, a/g range familiarization,IP run, POP UP WING OVER, POP UP OFFSET single and group attack, LOFT, BDA battle damage asset\n",
+
+				
+				
+				
+				"CQ1-navy circuit": "n-Preflight/startup\n-Taxi/takeoff\n-Navy circuit practice\n-RTB overheadn-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\n800ft navy circuit, AOA, hook up for field ops\n",
+                "CQ2-cv deploy": "\n-Preflight/startup\n-Taxi/takeoff\n-Rejoin to CVN\n-Case1 arrival\n-Navy circuit practice\n-WaveOff/bolter\n-Trap\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\n800ft navy circuit, AOA, MLW maximum landing weight,carrier deck taxi, AAR recovery tanker available\n",
+                "CQ3a-case1": "\n-Preflight/startup\n-Taxi/catapult\n-Case1 departure\n-Navy circuit practice\n-WaveOff/bolter\n-3 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each, initial 800ft/350kts, navy circuit, carrier deck taxi, AAR recovery tanker available\n",
+                "CQ3b-case1 WX": "\n-Preflight/startup\n-Taxi/catapult\nCat1 departure\n-Navy circuit practice\n-WaveOff/bolter\n-3 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each, initial 800ft/350kts, navy circuit, carrier deck taxi, AAR recovery tanker available\n",
+                "CQ4-case2": "\n-Preflight/startup\n-Taxi/catapult\n-Case2 departure\n-Case2 arrival\n-1 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase2 departure: straight 1500ft/300kts 10nm, AOA, case2 arrival 5nm stack 1000ft each,carrier deck taxi, AAR recovery tanker available\n",
+                "CQ5-case3": "\n-Preflight/startup\n-Taxi/catapult\n-Case3 departure\n-Case3 arrival\n-1 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase3 departure: straight 3000ft/300kts 10nm, AOA, case3 arrival 5nm stack 1000ft each,carrier deck taxi, AAR recovery tanker available\n",
+                "CQ6-case3 imc": "\n-Preflight/startup\n-Taxi/catapult\n-Case3 departure\n-Case3 arrival\n-1 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase3 departure: straight 3000ft/300kts 10nm, AOA, case3 arrival 5nm stack 1000ft each,carrier deck taxi, AAR recovery tanker available\n",
+                "CQ7-cq emg1": "\n-Preflight/startup\n-Taxi/catapult\n-Cat1 departure\n-Simulated Engine out\n-Climb and relight\n-AAR on recovery tanker\n-Case1 arrival single engine\n-Waveoff single engine\n-1 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each, S/E single engine procedure for climb out, ENG relight, S/E setting for landing FLAPS HALF, carrier deck taxi, AAR recovery tanker available\n",
+                "CQ8-scramble vid": "\n-Preflight/startup\n-Taxi/catapult in coppia\n-Case1 departure\n-Nav to ops area\n-A/G sea radar\n-Tpod and VID ship/aircraft\n-RTB case1\n-Trap\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center+TPOD tank\n\ncase1 departure: 20/20 500ft/300kts 10nm, AOA, case1 arrival 5nm stack 1000ft each,radar a/g sea, a/a, TPOD use for VID, VID aircraft or ship, carrier deck taxi, AAR recovery tanker available\n",
+                "CQ9-harpoon": "\n-Preflight/startup\n-Taxi/catapult\n-Case1 departure\n-Nav to ops area\n-A/G sea radar\n-Harpoon setting\n-Tgt engage\n-RTB case1\n-Trap\n-Taxi/shutdown\n\n**Loadout:** 2aim9+2AGM84center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each, radar a/g sea, agm84 performance and deploy mode, carrier deck taxi, AAR recovery tanker available\n",
+                "CQR-carrier qualification recency": "\n-Preflight/startup\n-Taxi/catapult\n-Case1 departure\n-AAR on recovery tanker\n-3 Traps\n-Taxi/shutdown\n\n**Loadout:** 2aim9+1center tank\n\ncase1 departure: 20/20 500ft/300kts 7nm, AOA, case1 arrival 5nm stack 1000ft each,carrier deck taxi, AAR recovery tanker available\n",
+				
+				"HELO1-airport ops / handling": "\n-Preflight/startup\n-Hovercheck\n-Taxi\n-Handling on runway + side\n-acceleration and deceleration\n-Landing std/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+				"HELO2-autorotazione": "\n-Preflight/startup\n-Taxi\n-T/O standard\n-Traffic pattern\n-Go-around\n-Autorotation\n-Slide Landing/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+				"HELO3-takeoff": "\n-Preflight/startup\n-Taxi\n-T/O rapido\n-T/O ripido\n-T/O vertical\n-Landing std/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+				"HELO4-formation": "\n-Preflight/startup\n-Taxi\n-T/O std\n-nav to ops area\n-formazioni/cambi\n-RTB overhead\n-Landing std/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+				"HELO5-nav vmc": "\n-Preflight/startup\n-Taxi\n-T/O std\n-VFR navigation WYP/VOR/NDB\n-RTB overhead\n-Landing std/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+				"HELO6-out-field ops": "\n-Preflight/startup\n-Taxi\n-T/O std\n-rejoin to ops area\n-Field consideration\n-Simulated Emergency landing\n-RTB overhead\n-Landing std/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+				"HELO7-Night ops": "\n-Preflight/startup\n-NVG setting\n-Taxi\n-T/O std\n-VFR navigation WYP/VOR/NDB\n-Out-field landing\n-RTB overhead\n-Landing std/shutdown\n\n**Loadout:** clean\n\ntraffic circuit, com radio, handling, limitations\n",
+
+				
+            };
+
+            // Get the additional text for the selected Mission in vertical format
+            const additionalText = additionalTexts[type] || "No additional details.";
+            const modifiedType = `${type}:\n${additionalText}`; // Ensure vertical format with newline
+
+            // Formatting the date and time to add a space before the time
+            const formattedDatetime = datetime.replace("T", " ");
+
+            // Use modifiedType in the message
+            const message = `**Date/Time:** ${formattedDatetime} - **Dep/Arr:** ${depArr} - **Aircraft:** ${aircraft}\n**Meteo:** ${meteo}\n**Flight Plan:** ${flightplan}\n**Mission:** ${modifiedType}\n**server:** ${server}\n\n**Note:** ${note}`;
+
+        // Send the message to 4 Stormo Discord
+        fetch('https://discord.com/api/webhooks/1320392615245648003/4kfbJdcMuR2w_rUUtPJ5069DuJD3aKfSbkUvpJS2sVY0HLcfvKZ95qlXDZEYDmtMlmGu', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                content: message
+            }),
+        }).then(response => {
+            if (response.ok) {
+                alert("Mission posted successfully!");
+            } else {
+                alert("Error posting mission.");
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            alert("Error posting mission.");
+        });
+		
+	// Send the message to UNSAFE Discord
+            /*
+			fetch('https://discord.com/api/webhooks/1283908852873560104/-3TK4jOdrgN14clIj4HDiAUbUCA_RybjlBEHyo7xvwkO7yL4_fKT1L3EaIyUcAhGDdjE', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                content: message
+            }),
+        }).then(response => {
+            if (response.ok) {
+                alert("Mission posted successfully!");
+            } else {
+                alert("Error posting mission.");
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            alert("Error posting mission.");
+        });
+		*/
+    });
+</script>
+</body>
+</html>
